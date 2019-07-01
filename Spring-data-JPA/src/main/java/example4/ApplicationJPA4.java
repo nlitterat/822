@@ -55,7 +55,7 @@ public class ApplicationJPA4 {
 		System.out.println("**************** updateing the seats");
 
 //		List<Seat> seatByBusId = seatDao.findByBusId(bus.getId());
-		List<Seat> seatByBusId = seatDao.findByBusIdQuery(bus.getId());
+		List<Seat> seatByBusId = seatDao.findByBusIdQuery(bus.getId()); 
 		//seatByBusId.get(0).setRawLetter("Z");
 	//	seatDao.saveSeat(seatByBusId.get(0));
 		
