@@ -50,18 +50,18 @@ public class ApplicationJPA2B {
 		
 		System.out.println("**************** updateing the seats");
 
-		bus.getSeats().get(0).setRawLetter("Z");
-		busDao.saveBus(bus);
+//		bus.getSeats().get(0).setRawLetter("Z");
+//		busDao.saveBus(bus);
 		
 
-//		List<Seat> seatByBusId = seatDao.getSeatByBusId(bus.getId());
-//		seatByBusId.get(0).setRawLetter("Z");
-//		seatDao.saveSeat(seatByBusId.get(0));
+		List<Seat> seatByBusId = seatDao.getSeatByBusId(bus.getId());
+		seatByBusId.get(0).setRawLetter("Z");
+		seatDao.saveSeat(seatByBusId.get(0));
 //		
 		System.out.println("**************** updating  Bus");
-
+		
 		bus.setName(bus.getName() + " change it");
-		//bus.setSeats(seatByBusId);
+		bus.setSeats(seatByBusId);
 		busDao.saveBus(bus);
 		
 		seatDao.saveSeat(bus.getSeats().get(0));
